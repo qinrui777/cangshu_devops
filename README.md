@@ -20,6 +20,8 @@ https://github.com/zhaojing?tab=repositories
 
 使用dockerhub (qinrui的dockerhub账号管理,新建了Organizations**cangshuorg**,如果*repo不存*在或*没有push权限*，找**qinrui**）
 
+推送镜像具体步骤见：[Google drive](https://drive.google.com/drive/folders/1xDmQil60169Eremz9r79-CvkgOW6lhj0)
+
 例子：
 `docker push cangshuorg/stockmanagement:tagname`
 
