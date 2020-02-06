@@ -11,14 +11,14 @@
 master 主干开发，不同环境均部署master分支的代码镜像
 
 ### 3-源代码、镜像仓库
-- 源代码存  
+- 源代码
 
-放于zhaojing的github仓库中（如有权限不够，需要找zhaojing）  
+存放于zhaojing的github仓库中（如有权限不够，需要找zhaojing）    
 https://github.com/zhaojing?tab=repositories
 
 - 镜像仓库
 
-使用dockerhub (qinrui的dockerhub账号管理,新建了Organizations **cangshuorg**,如果repo不存在，或没有push权限，找 **qinrui**
+使用dockerhub (qinrui的dockerhub账号管理,新建了Organizations**cangshuorg**,如果*repo不存*在或*没有push权限*，找**qinrui**）
 
 例子：
 `docker push cangshuorg/stockmanagement:tagname`
@@ -32,7 +32,7 @@ https://github.com/zhaojing?tab=repositories
 |prod(生产环境)| 16G 4c |     暂无       | 暂无|
 
 ### 5-数据库
-连接数据库信息，请参考有关服务器信息和配置文件
+已在ECS 安全组规则中放开5432端口，对于连接数据库信息，请参考有关服务器信息和配置文件
 
 - 命令行:
 `psql -h 116.62.192.197 -p 5432 -U postgres`
