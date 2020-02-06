@@ -10,7 +10,7 @@
 
 master 主干开发，不同环境均部署master分支的代码镜像
 
-### 2-源代码、镜像仓库
+### 3-源代码、镜像仓库
 - 源代码存  
 
 放于zhaojing的github仓库中（如有权限不够，需要找zhaojing）  
@@ -23,7 +23,7 @@ https://github.com/zhaojing?tab=repositories
 例子：
 `docker push cangshuorg/stockmanagement:tagname`
 
-### 3-服务器、域名等
+### 4-服务器、域名等
 > 对比aws、aliyun，考虑aliyun性价比较高，当前目标针对中国的业务，所以选择用aliyun
 
 |  环境  |     配置     |    公网IP     | 状态|
@@ -31,14 +31,18 @@ https://github.com/zhaojing?tab=repositories
 |dev(开发环境)|  8G 2c  | 116.62.192.197| 已有|
 |prod(生产环境)| 16G 4c |     暂无       | 暂无|
 
-注意点：
+### 5-数据库
+连接数据库信息，请参考有关服务器信息和配置文件
+
+- 命令行:
+`psql -h 116.62.192.197 -p 5432 -U postgres`
+
+- 图形化界面
+
+### 注意点：
 - 1.由于服务器可能重建，公网IP可能会变动
 - 2.数据库需要备份
 
-### 4-数据库
-
-命令行:
-`psql -h 116.62.192.197 -p 5432 -U postgres`
 
 
 
