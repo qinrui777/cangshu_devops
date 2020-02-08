@@ -34,17 +34,48 @@ https://github.com/zhaojing?tab=repositories
 |prod(生产环境)| 16G 4c |     暂无       | 暂无|
 
 ### 5-数据库
-已在ECS 安全组规则中放开5432端口，对于连接数据库信息，请参考有关服务器信息和配置文件
+*已在ECS 安全组规则中放开5432端口，对于连接数据库信息，请参考有关服务器信息和配置文件*
 
+
+##### 1-连接
 - 命令行:
 `psql -h 116.62.192.197 -p 5432 -U postgres`
 
-- 图形化界面
+- 图形化界面 - 略
 
+##### 2-数据库备份
+
+`pg_dump -h 116.62.192.197 -p 5432 -U postgres -d open_lmis | gzip > /<YOUR_APTH>/backup/`date +%Y%m%d%H`_dev_pg.gz`
+
+脚本见 `scripts/backup_db.sh`
+
+##### 3-数据库恢复
+
+- 1. 先 drop table
+> 找dev同学
+
+- 2. 利用备份文件恢复
+
+`gunzip -c db-20191023.gz | psql -h localhost -d open_lmis -U postgres`
+
+或
+
+```bash
+#直接解压,不保留原gz文件
+gunzip xxx.gz
+#解压保留源gz文件
+gunzip -c xxx.gz > xxx.sql
+#进去pgsql控制台
+psql -U dbUser
+#切换到待导入的数据库
+\c dbName;
+#导入sql文件
+\i xxx.sql
+#退出控制台
+\q
+```
+
+---
 ### 注意点：
 - 1.由于服务器可能重建，公网IP可能会变动
 - 2.数据库需要备份
-
-
-
-
