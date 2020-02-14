@@ -6,9 +6,22 @@
 - 开源（github，dockerhub）
 
 
-### 2-分支策略、部分策略
+### 2-分支策略、部署策略
 
 master 主干开发，不同环境均部署master分支的代码镜像
+
+- 更新 *reference-ui* 具体步骤如下
+
+```bash
+#step1 先登录服务器
+ssh xxx 
+#step2 进入目录,以dev环境为例
+cd /data/openlmis-ref-distro
+#step3 修改 .env 文件中的 reference-ui 版本号
+
+#step4 重启reference-ui
+docker-compose up --no-deps --force-recreate -d reference-ui
+```
 
 ### 3-源代码、镜像仓库
 - 源代码
