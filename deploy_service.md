@@ -13,6 +13,9 @@ mkdir /data
 
 cd /data && git clone https://github.com/zhaojing/openlmis-ref-distro
 
+# 添加 镜像加速器
+#https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors
+
 #拉取镜像过程较慢
 cd openlmis-ref-distro && docker-compose pull
 ```
