@@ -10,7 +10,25 @@
 
 master 主干开发，不同环境均部署master分支的代码镜像
 
-- 更新 *reference-ui* 具体步骤如下
+##### 前端打镜像,以 *auth-ui* 为例
+```bash
+# 下载代码↓
+git clone https://github.com/zhaojing/openlmis-auth-ui
+cd openlmis-auth-ui
+# 准备环境
+touch .env
+docker-compose run --service-ports auth-ui
+# 在上面步骤启动的容器中执行↓
+npm install
+grunt build --noTest --noDocs --noStyleguide
+# 退出容器后，在工程目录执行↓
+docker-compose build image
+# re-tag 镜像名称，然后push到dockerhub(没有push权限，找qinrui)
+docker tag openlmis/auth-ui:latest cangshuorg/auth-ui:latest
+docker push cangshuorg/auth-ui:latest
+```
+
+##### 服务器上更新 *reference-ui* 具体步骤如下
 
 ```bash
 #step1 先登录服务器
