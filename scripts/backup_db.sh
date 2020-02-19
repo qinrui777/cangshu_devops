@@ -3,8 +3,7 @@
 ####################################
 #   Function: backup postgres open_lmis database
 #   Period :  every day
-#   Crontab 
-#
+#   Crontab: 00 10-20/2 * * * /data/backup/backup.sh >> /data/backup/pg_backup.log
 ###################################
 
 BACKUP_PATH="/data/backup"
